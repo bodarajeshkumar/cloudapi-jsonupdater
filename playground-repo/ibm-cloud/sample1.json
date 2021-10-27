@@ -1,0 +1,47 @@
+{
+  "allApis": [
+    {
+      "apiName": "create_enterprise",
+      "description": "Create a new enterprise, which you can use to centrally manage multiple accounts. To create an enterprise, you must have an active Subscription account. <br/><br/>The API creates an enterprise entity, which is the root of the enterprise hierarchy. It also creates a new enterprise account that is used to manage the enterprise. All subscriptions, support entitlements, credits, and discounts from the source subscription account are migrated to the enterprise account, and the source account becomes a child account in the hierarchy. The user that you assign as the enterprise primary contact is also assigned as the owner of the enterprise account.",
+      "codeSnippets": [
+        {
+          "language": "python",
+          "codeSnippet": "create_enterprise_response = enterprise_management_service.create_enterprise(\n"
+        }
+      ]
+    },
+    {
+      "apiName": "list_enterprises",
+      "description": "Retrieve all enterprises for a given ID by passing the IDs on query parameters. If no ID is passed, the enterprises for which the calling identity is the primary contact are returned. You can use pagination parameters to filter the results. <br/><br/>This method ensures that only the enterprises that the user has access to are returned. Access can be controlled either through a policy on a specific enterprise, or account-level platform services access roles, such as Administrator, Editor, Operator, or Viewer. When you call the method with the `enterprise_account_id` or `account_id` query parameter, the account ID in the token is compared with that in the query parameter. If these account IDs match, authentication isn't performed and the enterprise information is returned. If the account IDs don't match, authentication is performed and only then is the enterprise information returned in the response.",
+      "codeSnippets": [
+        {
+          "language": "python",
+          "codeSnippet": "list_enterprises_response = enterprise_management_service.list_enterprises(\n"
+        }
+      ]
+    },
+    {
+      "apiName": "get_enterprise",
+      "description": "Retrieve an enterprise by the `enterprise_id` parameter. All data related to the enterprise is returned only if the caller has access to retrieve the enterprise.",
+      "codeSnippets": [
+        {
+          "language": "python",
+          "codeSnippet": "enterprise = enterprise_management_service.get_enterprise(\n"
+        }
+      ]
+    },
+    {
+      "apiName": "update_enterprise",
+      "description": "Update the name, domain, or IAM ID of the primary contact for an existing enterprise. The new primary contact must already be a user in the enterprise account.",
+      "codeSnippets": [
+        {
+          "language": "python",
+          "codeSnippet": "response = enterprise_management_service.update_enterprise(\n"
+        }
+      ]
+    }
+  ],
+  "requiredSDKs": [
+    "ibm-vpc>=0.7.0"
+  ]
+}

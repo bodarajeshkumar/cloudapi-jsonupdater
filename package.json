@@ -1,0 +1,24 @@
+{
+  "name": "cloudapi-jsonupdater",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "start": "ts-node index2.ts",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.13",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "fasy": "^9.0.0",
+    "nodegit": "^0.27.0",
+    "openapi-snippet": "^0.12.1"
+  }
+}
